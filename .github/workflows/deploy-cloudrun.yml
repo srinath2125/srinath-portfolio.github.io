@@ -22,7 +22,7 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-      - name: Build and push Docker image
+            - name: Build and push Docker image
         run: |
           IMAGE_NAME=asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run/portfolio
           docker build -t $IMAGE_NAME .
@@ -35,3 +35,4 @@ jobs:
             --region=asia-south1 \
             --platform=managed \
             --allow-unauthenticated
+
