@@ -1,10 +1,14 @@
-# Use an Nginx base image to serve static files
+# Use Nginx as the base image
 FROM nginx:alpine
 
-# Copy the portfolio website files to the Nginx web root
+# Remove the default Nginx config and use a custom one
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy your portfolio website files
 COPY . /usr/share/nginx/html
 
-# Expose port 8080
+# Expose Cloud Run's required port
 EXPOSE 8080
 
 # Start Nginx
