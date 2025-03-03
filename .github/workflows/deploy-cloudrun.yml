@@ -24,7 +24,7 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          IMAGE_NAME=asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run-source-deploy/portfolio
+         IMAGE_NAME=asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run/portfolio
           docker build -t $IMAGE_NAME .
           docker push $IMAGE_NAME
 
