@@ -22,6 +22,10 @@ jobs:
         with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
+      - name: Configure Docker Authentication
+        run: |
+          gcloud auth configure-docker asia-south1-docker.pkg.dev
+
       - name: Build and push Docker image
         run: |
           IMAGE_NAME="asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run/portfolio"
