@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - fire-base
 
 jobs:
   deploy:
