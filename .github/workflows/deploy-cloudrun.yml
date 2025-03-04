@@ -32,7 +32,7 @@ jobs:
           docker build -t "$IMAGE_NAME" .
           docker push "$IMAGE_NAME"
 
-            - name: Deploy to Cloud Run
+            - name: Deploy portfolio to Cloud Run
         run: |
           gcloud run deploy portfolio-service \
             --image=asia-south1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/cloud-run/portfolio \
